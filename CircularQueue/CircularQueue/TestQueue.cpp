@@ -12,20 +12,34 @@ int main()
     //std::cout << std::dec << "q size=" << q._elements_count << "\n";
     printf("q size=%d\n", q._elements_count);
 
-    for (size_t i = 0; i < 50; i++) {
+    for (size_t i = 0; i < 200; i++) {
         enqueue(&q, i);
+
+        printf("q elements cout:%d\n", q._elements_count);
     }
-    //head=0, tail=48, count=48!!, !=QUEUE_SIZE
     
-    printf("q elements cout:%d\n", q._elements_count);
+    
     size_t count = get_size(&q);
-    for (size_t i = 0; i < 51; i++) {
+    for (size_t i = 0; i < 101; i++) {
         //std::cout << std::dec << dequeue(&q);
         //std::cout << "size=" << std::dec << get_size(&q) << "\n";
         if (!is_empty(&q)) {
             printf("%d ", dequeue(&q));
         }
         printf("size=%d\n", get_size(&q));
+    }
+
+     for (size_t i = 0; i < 90; i++) {
+      enqueue(&q, i);
+
+      printf("q elements cout:%d\n", q._elements_count);
+    }
+
+    for (size_t i = 0; i < get_size(&q); i++) {
+      if (!is_empty(&q)) {
+        printf("%d ", dequeue(&q));
+      }
+      printf("size=%d\n", get_size(&q));
     }
 }
 

@@ -29,7 +29,7 @@ uint8_t dequeue(circular_queue_t *q) {
 	//}
 
 	uint8_t current_head = q->_head;
-	q->_head = current_head + 1;
+	q->_head = next(current_head, q);
 	q->_elements_count--;
 
 	return (q->_elements[current_head]);
